@@ -1,10 +1,10 @@
-# 📦 Nome do Projeto
+# 📦 Sistema de GERENCIAMENTO DE UM AEROPORTO
 
 > Projeto desenvolvido em Java utilizando Spring Boot e arquitetura Hexagonal (Ports and Adapters).
 
 ## 🚀 Visão Geral
 
-Este projeto tem como objetivo demonstrar a aplicação da **Arquitetura Hexagonal (Ports & Adapters)** com **Java 17** e **Spring Boot 3.x**, promovendo separação de responsabilidades, independência de frameworks e alta testabilidade.
+Este projeto tem como objetivo demonstrar a aplicação da **Arquitetura Hexagonal (Ports & Adapters)** com **Java 21** e **Spring Boot 3.5.0**, promovendo separação de responsabilidades, independência de frameworks e alta testabilidade.
 
 ---
 
@@ -22,12 +22,11 @@ A estrutura é baseada nos seguintes conceitos:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Java 17
-- Spring Boot 3.x
-- Maven ou Gradle
+- Java 21
+- Spring Boot 3.5.0
+- Maven
 - JUnit + Mockito
-- MapStruct (opcional)
-- PostgreSQL ou H2 (ambiente de testes)
+- PostgreSQL
 
 ---
 
@@ -50,13 +49,9 @@ cd seu-projeto
 ./gradlew test
 
 📌 Exemplos de Endpoints
+
 GET /api/v1/clientes
 
 POST /api/v1/clientes
 
 GET /api/v1/clientes/{id}
-
-
-Quer que eu gere também os *templates* de código com estrutura inicial hexagonal? Posso fazer isso agora.
-
-[Click here to try a new GPT!](https://f614.short.gy/Code)
