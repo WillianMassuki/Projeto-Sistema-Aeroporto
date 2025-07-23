@@ -17,7 +17,6 @@ public class AeroportoJpaAdapter implements AeroportoRepositoryPort {
         this.repo = repo;
     }
 
-
     public Aeroporto salvar(Aeroporto a) {
         return repo.save(a);
     }
