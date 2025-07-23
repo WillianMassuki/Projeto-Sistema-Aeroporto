@@ -3,9 +3,11 @@ package br.com.project.airport.gestaorecurso.service;
 import br.com.project.airport.gestaorecurso.in.RecursoUseCase;
 import br.com.project.airport.gestaorecurso.model.Recurso;
 import br.com.project.airport.gestaorecurso.out.RecursoRepositoryPort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RecursoService implements RecursoUseCase {
 
     private final RecursoRepositoryPort repository;

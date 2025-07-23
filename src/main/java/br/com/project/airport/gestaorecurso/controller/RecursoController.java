@@ -1,7 +1,7 @@
 package br.com.project.airport.gestaorecurso.controller;
 
-import br.com.project.airport.gestaorecurso.in.RecursoUseCase;
 import br.com.project.airport.gestaorecurso.model.Recurso;
+import br.com.project.airport.gestaorecurso.service.RecursoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.List;
 @RequestMapping("/recursos")
 public class RecursoController {
 
-    private final RecursoUseCase service;
+    private final RecursoService service;
 
-    public RecursoController(RecursoUseCase service) {
+    public RecursoController(RecursoService service) {
         this.service = service;
     }
 
