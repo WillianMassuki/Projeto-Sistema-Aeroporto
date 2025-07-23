@@ -2,7 +2,7 @@ package br.com.project.airport.controlevoo.service;
 
 import br.com.project.airport.controlevoo.in.TorreDeControleUseCase;
 import br.com.project.airport.controlevoo.model.TorreDeControle;
-import br.com.project.airport.controlevoo.out.TorreDeControleRepository;
+import br.com.project.airport.controlevoo.repository.TorreDeControleJpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,10 +10,10 @@ import java.util.Optional;
 
 @Service
 public class TorreControleService implements TorreDeControleUseCase {
-    private final TorreDeControleRepository repository;
 
+    private final TorreDeControleJpaRepository repository;
 
-    public TorreControleService(TorreDeControleRepository repository) {
+    public TorreControleService(TorreDeControleJpaRepository repository) {
         this.repository = repository;
     }
 

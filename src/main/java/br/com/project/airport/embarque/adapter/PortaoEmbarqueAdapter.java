@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class PortaoEmbarqueRepositoryAdapter implements PortaoEmbarqueRepositoryPort {
+public class PortaoEmbarqueAdapter implements PortaoEmbarqueRepositoryPort {
 
     private final PortaoEmbarqueRepository portaoEmbarqueRepository;
 
-    public PortaoEmbarqueRepositoryAdapter(PortaoEmbarqueRepository portaoEmbarqueRepository) {
+    public PortaoEmbarqueAdapter(PortaoEmbarqueRepository portaoEmbarqueRepository) {
         this.portaoEmbarqueRepository = portaoEmbarqueRepository;
     }
 

@@ -1,10 +1,8 @@
 package br.com.project.airport.embarque.controller;
 
 import br.com.project.airport.embarque.in.PortaoEmbarqueUseCase;
-import br.com.project.airport.embarque.model.PortaoEmbarque;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/portoes")
@@ -16,6 +14,7 @@ public class PortaoEmbarqueController {
         this.service = service;
     }
 
+    /*
     @PostMapping
     public PortaoEmbarque salvar(@RequestBody PortaoEmbarque p) {
         return service.salvar(p);
@@ -40,4 +39,6 @@ public class PortaoEmbarqueController {
     public void deletar(@PathVariable Long id) {
         service.deletar(id);
     }
+
+     */
 }

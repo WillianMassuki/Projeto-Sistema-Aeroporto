@@ -2,7 +2,7 @@ package br.com.project.airport.embarque.service;
 
 import br.com.project.airport.embarque.in.PortaoEmbarqueUseCase;
 import br.com.project.airport.embarque.model.PortaoEmbarque;
-import br.com.project.airport.embarque.out.PortaoEmbarqueRepositoryPort;
+import br.com.project.airport.embarque.repository.PortaoEmbarqueRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,38 @@ import java.util.List;
 @Service
 public class PortaoEmbarqueService implements PortaoEmbarqueUseCase {
 
-    private final PortaoEmbarqueRepositoryPort repository;
+    private final PortaoEmbarqueRepository repository;
+
+    public PortaoEmbarqueService(PortaoEmbarqueRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public PortaoEmbarque salvar(PortaoEmbarque portao) {
+        return null;
+    }
+
+    @Override
+    public List<PortaoEmbarque> listar() {
+        return List.of();
+    }
+
+    @Override
+    public PortaoEmbarque buscarPorId(Long id) {
+        return null;
+    }
+
+    @Override
+    public PortaoEmbarque atualizar(Long id, PortaoEmbarque portao) {
+        return null;
+    }
+
+    @Override
+    public void deletar(Long id) {
+
+    }
+
+    /*
 
     public PortaoEmbarqueService(PortaoEmbarqueRepositoryPort repository) {
         this.repository = repository;
@@ -21,11 +52,10 @@ public class PortaoEmbarqueService implements PortaoEmbarqueUseCase {
     }
 
     public List<PortaoEmbarque> listar() {
-        return repository.listar();
-    }
+        return repository.findAll();
 
     public PortaoEmbarque buscarPorId(Long id) {
-        return repository.buscarPorId(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Portão não encontrado"));
     }
 
@@ -38,4 +68,6 @@ public class PortaoEmbarqueService implements PortaoEmbarqueUseCase {
     public void deletar(Long id) {
         repository.deletar(id);
     }
+
+     */
 }
