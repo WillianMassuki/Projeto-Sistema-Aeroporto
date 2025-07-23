@@ -1,7 +1,7 @@
 package br.com.project.airport.gestaofinanceira.controller;
 
-import br.com.project.airport.gestaofinanceira.in.DespesaUseCase;
 import br.com.project.airport.gestaofinanceira.model.Despesa;
+import br.com.project.airport.gestaofinanceira.service.DespesaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,34 +10,31 @@ import java.util.List;
 @RequestMapping("/despesas")
 public class DespesaController {
 
-    private final DespesaUseCase service;
+    private final DespesaService despesaUseCase;
 
-    public DespesaController(DespesaUseCase service) {
-        this.service = service;
+    public DespesaController(DespesaService despesaUseCase) {
+        this.despesaUseCase = despesaUseCase;
     }
 
+
     @PostMapping
-    public Despesa salvar(@RequestBody Despesa d) {
-        return service.salvar(d);
+    public Despesa salvar(@RequestBody Despesa despesa) {
+        return despesaUseCase.salvar(despesa);
+
     }
 
     @GetMapping
     public List<Despesa> listar() {
-        return service.listar();
+        return despesaUseCase.listar();
     }
 
     @GetMapping("/{id}")
     public Despesa buscar(@PathVariable Long id) {
-        return service.buscarPorId(id);
-    }
-
-    @PutMapping("/{id}")
-    public Despesa atualizar(@PathVariable Long id, @RequestBody Despesa d) {
-        return service.atualizar(id, d);
+        return despesaUseCase.buscarPorId(id);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        service.deletar(id);
+        despesaUseCase.deletar(id);
     }
 }

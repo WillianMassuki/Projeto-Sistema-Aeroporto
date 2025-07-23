@@ -3,9 +3,11 @@ package br.com.project.airport.gestaofinanceira.service;
 import br.com.project.airport.gestaofinanceira.in.DespesaUseCase;
 import br.com.project.airport.gestaofinanceira.model.Despesa;
 import br.com.project.airport.gestaofinanceira.out.DespesaRepositoryPort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DespesaService implements DespesaUseCase {
 
     private final DespesaRepositoryPort repository;

@@ -8,6 +8,6 @@ public interface DespesaUseCase {
     Despesa salvar(Despesa despesa);
     List<Despesa> listar();
     Despesa buscarPorId(Long id);
-    Despesa atualizar(Long id, Despesa despesa);
+ //   Despesa atualizar(Long id, Despesa despesa);
     void deletar(Long id);
 }

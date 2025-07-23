@@ -3,9 +3,11 @@ package br.com.project.airport.gestaofinanceira.service;
 import br.com.project.airport.gestaofinanceira.in.FornecedorUseCase;
 import br.com.project.airport.gestaofinanceira.model.Fornecedor;
 import br.com.project.airport.gestaofinanceira.out.FornecedorRepositoryPort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FornecedorService implements FornecedorUseCase {
 
     private final FornecedorRepositoryPort repository;

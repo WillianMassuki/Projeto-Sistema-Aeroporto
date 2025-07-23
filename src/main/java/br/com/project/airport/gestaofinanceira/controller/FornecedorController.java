@@ -1,7 +1,7 @@
 package br.com.project.airport.gestaofinanceira.controller;
 
-import br.com.project.airport.gestaofinanceira.in.FornecedorUseCase;
 import br.com.project.airport.gestaofinanceira.model.Fornecedor;
+import br.com.project.airport.gestaofinanceira.service.FornecedorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,34 +10,34 @@ import java.util.List;
 @RequestMapping("/fornecedores")
 public class FornecedorController {
 
-    private final FornecedorUseCase service;
+    private final FornecedorService fornecedorService;
 
-    public FornecedorController(FornecedorUseCase service) {
-        this.service = service;
+    public FornecedorController(FornecedorService fornecedorService) {
+        this.fornecedorService = fornecedorService;
     }
 
     @PostMapping
-    public Fornecedor salvar(@RequestBody Fornecedor f) {
-        return service.salvar(f);
+    public Fornecedor salvar(@RequestBody Fornecedor fornecedor) {
+        return fornecedorService.salvar(fornecedor);
     }
 
     @GetMapping
     public List<Fornecedor> listar() {
-        return service.listar();
+        return fornecedorService.listar();
     }
 
     @GetMapping("/{id}")
     public Fornecedor buscar(@PathVariable Long id) {
-        return service.buscarPorId(id);
+        return fornecedorService.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public Fornecedor atualizar(@PathVariable Long id, @RequestBody Fornecedor f) {
-        return service.atualizar(id, f);
+    public Fornecedor atualizar(@PathVariable Long id, @RequestBody Fornecedor b) {
+        return fornecedorService.atualizar(id, b);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        service.deletar(id);
+        fornecedorService.deletar(id);
     }
 }
