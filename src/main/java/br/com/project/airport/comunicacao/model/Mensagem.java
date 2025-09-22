@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 @Entity
 public class Mensagem {
 
-
     @Id
     private String idMensagem;
 

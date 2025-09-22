@@ -1,7 +1,5 @@
 package br.com.project.airport.embarque.in;
 
-import br.com.project.airport.embarque.model.PortaoEmbarque;
-
 import java.util.List;
 
 public interface PortaoEmbarqueUseCase {

@@ -1,7 +1,6 @@
 package br.com.project.airport.embarque.service;
 
 import br.com.project.airport.embarque.in.PortaoEmbarqueUseCase;
-import br.com.project.airport.embarque.model.PortaoEmbarque;
 import br.com.project.airport.embarque.repository.PortaoEmbarqueRepository;
 import org.springframework.stereotype.Service;
 

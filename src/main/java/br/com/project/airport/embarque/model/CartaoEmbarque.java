@@ -15,6 +15,8 @@ public class CartaoEmbarque {
 
     private String assento;
 
+    private String idPortao;
+
     public CartaoEmbarque() {
     }
 
@@ -37,6 +39,10 @@ public class CartaoEmbarque {
 
     public void setAssento(String assento) {
         this.assento = assento;
+    }
+
+    public void autorizarPassagem() {
+
     }
 
     //   private Voo voo;

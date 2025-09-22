@@ -1,7 +1,5 @@
 package br.com.project.airport.embarque.out;
 
-import br.com.project.airport.embarque.model.PortaoEmbarque;
-
 import java.util.List;
 import java.util.Optional;
 

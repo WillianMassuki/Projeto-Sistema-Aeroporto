@@ -40,9 +40,6 @@ cd seu-projeto
 # Executar com Maven
 ./mvnw spring-boot:run
 
-# Ou com Gradle
-./gradlew bootRun
-
 # Executar testes unitários
 ./mvnw test
 # Ou

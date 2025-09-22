@@ -1,6 +1,5 @@
 package br.com.project.airport.controlevoo.adapter;
 
-import br.com.project.airport.embarque.model.PortaoEmbarque;
 import br.com.project.airport.embarque.out.PortaoEmbarqueRepositoryPort;
 import br.com.project.airport.embarque.repository.PortaoEmbarqueRepository;
 import org.springframework.stereotype.Component;
