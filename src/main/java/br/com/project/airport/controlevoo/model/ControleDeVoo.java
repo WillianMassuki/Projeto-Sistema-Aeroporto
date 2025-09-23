@@ -1,9 +1,6 @@
 package br.com.project.airport.controlevoo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class ControleDeVoo {
@@ -13,6 +10,12 @@ public class ControleDeVoo {
     private Long idControle;
 
     private String status;
+
+    @OneToOne
+    private Controlador controlador;
+
+    @OneToOne
+    private TorreDeControle torreDeControle;
 
     public ControleDeVoo() {
     }
@@ -36,5 +39,21 @@ public class ControleDeVoo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Controlador getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
+    }
+
+    public TorreDeControle getTorreDeControle() {
+        return torreDeControle;
+    }
+
+    public void setTorreDeControle(TorreDeControle torreDeControle) {
+        this.torreDeControle = torreDeControle;
     }
 }
