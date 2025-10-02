@@ -39,7 +39,6 @@ public class InformacaoService implements InformacaoUseCase {
         if (existente.isPresent()) {
             Informacao atualizada = existente.get();
             atualizada.setTipo(informacao.getTipo());
-            atualizada.setConteudo(informacao.getConteudo());
             atualizada.setValidade(informacao.getValidade());
             return repository.salvar(atualizada);
         } else {

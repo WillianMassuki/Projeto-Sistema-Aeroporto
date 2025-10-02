@@ -13,15 +13,21 @@ public class Informacao {
     @Column(nullable = false)
     private String tipo;  // exemplo: "embarque", "atraso"
 
+    /*
     @OneToOne
     @Column(nullable = false)
     private Mensagem conteudo;
 
+     */
+
     @Column(nullable = false)
     private LocalDateTime validade;
 
+    /*
     @OneToOne
     private Funcionario funcionario;
+
+     */
 
     public String getIdInformacao() {
         return idInformacao;
@@ -39,13 +45,6 @@ public class Informacao {
         this.tipo = tipo;
     }
 
-    public Mensagem getConteudo() {
-        return conteudo;
-    }
-
-    public void setConteudo(Mensagem conteudo) {
-        this.conteudo = conteudo;
-    }
 
     public LocalDateTime getValidade() {
         return validade;
@@ -55,10 +54,9 @@ public class Informacao {
         this.validade = validade;
     }
 
-    public Informacao(String idInformacao, String tipo, Mensagem conteudo, LocalDateTime validade) {
+    public Informacao(String idInformacao, String tipo, LocalDateTime validade) {
         this.idInformacao = idInformacao;
         this.tipo = tipo;
-        this.conteudo = conteudo;
         this.validade = validade;
     }
 
