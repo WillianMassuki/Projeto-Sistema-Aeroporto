@@ -1,7 +1,6 @@
 package br.com.project.airport.gestaofinanceira.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -9,33 +8,35 @@ import java.time.LocalDateTime;
 public class Receita {
 
     @Id
-    private String idReceita;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idReceita;
 
-    // «taxa de pouso», «aluguel», etc.
     private String tipo;
-
     private Double valor;
-
     private LocalDateTime data;
-
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_relatorio")
+    private Relatorio relatorio;
 
     public Receita() {
     }
 
-    public Receita(String idReceita, String tipo, Double valor, LocalDateTime data, String descricao) {
+    public Receita(Long idReceita, String tipo, Double valor, LocalDateTime data, String descricao, Relatorio relatorio) {
         this.idReceita = idReceita;
         this.tipo = tipo;
         this.valor = valor;
         this.data = data;
         this.descricao = descricao;
+        this.relatorio = relatorio;
     }
 
-    public String getIdReceita() {
+    public Long getIdReceita() {
         return idReceita;
     }
 
-    public void setIdReceita(String idReceita) {
+    public void setIdReceita(Long idReceita) {
         this.idReceita = idReceita;
     }
 
@@ -69,5 +70,13 @@ public class Receita {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Relatorio getRelatorio() {
+        return relatorio;
+    }
+
+    public void setRelatorio(Relatorio relatorio) {
+        this.relatorio = relatorio;
     }
 }

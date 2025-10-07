@@ -11,18 +11,17 @@ public class Informacao {
     private String idInformacao;
 
     @Column(nullable = false)
-    private String tipo;  // exemplo: "embarque", "atraso"
+    private String tipo; // exemplo: "embarque", "atraso"
 
-
-    @OneToOne
-    @Column(nullable = false)
+    @OneToOne(optional = false)
+    @JoinColumn(name = "id_mensagem", nullable = false)
     private Mensagem conteudo;
-
 
     @Column(nullable = false)
     private LocalDateTime validade;
 
     @OneToOne
+    @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
 
     public String getIdInformacao() {

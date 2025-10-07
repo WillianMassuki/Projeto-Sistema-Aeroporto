@@ -1,11 +1,7 @@
 package br.com.project.airport.gestaofinanceira.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
@@ -16,14 +12,18 @@ public class Despesa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idDespesa;
 
-    //«salário», «manutenção», etc.
     private String categoria;
-
     private Double valor;
-
     private LocalDateTime data;
-
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_fornecedor")
+    private Fornecedor fornecedor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_relatorio")
+    private Relatorio relatorio;
 
     public Despesa() {
     }
@@ -56,7 +56,7 @@ public class Despesa {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 

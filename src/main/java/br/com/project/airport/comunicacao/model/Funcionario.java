@@ -19,6 +19,10 @@ public class Funcionario {
     @Column(nullable = false, unique = true)
     private String matricula;
 
+    // opcional — só se quiser o relacionamento bidirecional
+    @OneToOne(mappedBy = "funcionario")
+    private Informacao informacao;
+
 
     public Funcionario() {
     }
