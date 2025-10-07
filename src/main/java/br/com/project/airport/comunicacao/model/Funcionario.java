@@ -1,15 +1,14 @@
 package br.com.project.airport.comunicacao.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 
 @Entity
 public class Funcionario {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idFuncionario;
 
     @Column(nullable = false)
     private String nome;
@@ -25,18 +24,18 @@ public class Funcionario {
     }
 
     public Funcionario(Long id, String nome, String cargo, String matricula) {
-        this.id = id;
+        this.idFuncionario = id;
         this.nome = nome;
         this.cargo = cargo;
         this.matricula = matricula;
     }
 
     public Long getId() {
-        return id;
+        return idFuncionario;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idFuncionario = id;
     }
 
     public String getNome() {

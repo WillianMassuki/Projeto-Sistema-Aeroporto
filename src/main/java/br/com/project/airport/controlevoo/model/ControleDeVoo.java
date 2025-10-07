@@ -12,9 +12,11 @@ public class ControleDeVoo {
     private String status;
 
     @OneToOne
+    @JoinColumn(name = "controlador_id")
     private Controlador controlador;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "torre_id")
     private TorreDeControle torreDeControle;
 
     public ControleDeVoo() {
@@ -56,4 +58,6 @@ public class ControleDeVoo {
     public void setTorreDeControle(TorreDeControle torreDeControle) {
         this.torreDeControle = torreDeControle;
     }
+
+
 }

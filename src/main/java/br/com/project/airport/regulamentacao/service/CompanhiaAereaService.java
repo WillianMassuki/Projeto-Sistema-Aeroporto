@@ -38,13 +38,6 @@ public class CompanhiaAereaService implements CompanhiaAereaServicePort {
         return null;
     }
 
-    /*
-    @Override
-    public CompanhiaAerea atualizarCompanhiaAerea(Long id, CompanhiaAerea companhiaAerea) {
-        return companhiaAereaRepositoryJpa.
-    }
-
-     */
 
     @Override
     public void deletarCompanhia(Long id) {
@@ -52,3 +45,11 @@ public class CompanhiaAereaService implements CompanhiaAereaServicePort {
 
     }
 }
+
+   /*
+    @Override
+    public CompanhiaAerea atualizarCompanhiaAerea(Long id, CompanhiaAerea companhiaAerea) {
+        return companhiaAereaRepositoryJpa.
+    }
+
+     */

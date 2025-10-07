@@ -34,7 +34,7 @@ A estrutura é baseada nos seguintes conceitos:
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone 
 cd seu-projeto
 
 # Executar com Maven

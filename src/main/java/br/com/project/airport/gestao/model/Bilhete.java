@@ -57,19 +57,19 @@ public class Bilhete {
         this.assento = assento;
     }
 
-    public Bagagem getBagagem() {
+    public boolean getBagagem() {
         return bagagem;
     }
 
-    public void setBagagem(Bagagem bagagem) {
+    public void setBagagem(boolean bagagem) {
         this.bagagem = bagagem;
     }
 
-    public Passageiro getPassageiro() {
+    public String getPassageiro() {
         return passageiro;
     }
 
-    public void setPassageiro(Passageiro passageiro) {
+    public void setPassageiro(String passageiro) {
         this.passageiro = passageiro;
     }
 

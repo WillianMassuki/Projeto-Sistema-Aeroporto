@@ -2,6 +2,7 @@ package br.com.project.airport.controlevoo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Controlador {
@@ -12,6 +13,9 @@ public class Controlador {
     private String nome;
 
     private String matricula;
+
+    @OneToOne(mappedBy = "controlador")
+    private ControleDeVoo controle;
 
     public Controlador() {
     }
@@ -47,4 +51,11 @@ public class Controlador {
     }
 
 
+    public ControleDeVoo getControle() {
+        return controle;
+    }
+
+    public void setControle(ControleDeVoo controle) {
+        this.controle = controle;
+    }
 }

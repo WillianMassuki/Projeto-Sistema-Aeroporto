@@ -23,6 +23,10 @@ public class Pista{
         this.status = status;
     }
 
+    public Pista() {
+
+    }
+
     public String getIdPista() {
         return idPista;
     }

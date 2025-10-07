@@ -38,8 +38,9 @@ public class AuditorService implements AuditorRepositoryPort {
 
     }
 
+}
 
-    /*
+ /*
     public  String realizarInspecao(EntidadeRegulada entidade)
     {
 
@@ -47,4 +48,3 @@ public class AuditorService implements AuditorRepositoryPort {
     }
 
      */
-}

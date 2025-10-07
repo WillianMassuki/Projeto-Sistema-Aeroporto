@@ -46,5 +46,13 @@ public class CartaoEmbarque {
 
     }
 
+    public String getIdPortao() {
+        return idPortao;
+    }
+
+    public void setIdPortao(String idPortao) {
+        this.idPortao = idPortao;
+    }
+
     //   private Voo voo;
 }

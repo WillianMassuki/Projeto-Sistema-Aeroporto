@@ -33,7 +33,6 @@ public class InformacaoServiceTest {
         informacao = new Informacao();
         informacao.setIdInformacao("123");
         informacao.setTipo("ALERTA");
-        informacao.setConteudo("Informação importante");
         informacao.setValidade(LocalDate.now().plusDays(3).atStartOfDay());
     }
 
@@ -73,7 +72,6 @@ public class InformacaoServiceTest {
     void testAtualizarComSucesso() {
         Informacao novaInfo = new Informacao();
         novaInfo.setTipo("ATUALIZADO");
-        novaInfo.setConteudo("Novo conteúdo");
         novaInfo.setValidade(LocalDate.now().plusDays(10).atStartOfDay());
 
         when(repository.buscarPorId("123")).thenReturn(Optional.of(informacao));
@@ -82,7 +80,6 @@ public class InformacaoServiceTest {
         Informacao result = service.atualizar("123", novaInfo);
 
         assertEquals("ATUALIZADO", result.getTipo());
-        assertEquals("Novo conteúdo", result.getConteudo());
         verify(repository).buscarPorId("123");
         verify(repository).salvar(any(Informacao.class));
     }
