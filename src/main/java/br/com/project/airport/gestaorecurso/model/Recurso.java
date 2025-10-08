@@ -1,20 +1,19 @@
 package br.com.project.airport.gestaorecurso.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public  class Recurso {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idRecurso;
+    private Long idRecurso;
 
     private String tipo;
-
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pista")
+    private Pista pista;
 
     public String alocar() {
 
@@ -26,21 +25,21 @@ public  class Recurso {
         return "";
     }
 
-
     public Recurso() {
     }
 
-    public Recurso(String idRecurso, String tipo, String status) {
+    public Recurso(Long idRecurso, String tipo, String status, Pista pista) {
         this.idRecurso = idRecurso;
         this.tipo = tipo;
         this.status = status;
+        this.pista = pista;
     }
 
-    public String getIdRecurso() {
+    public Long getIdRecurso() {
         return idRecurso;
     }
 
-    public void setIdRecurso(String idRecurso) {
+    public void setIdRecurso(Long idRecurso) {
         this.idRecurso = idRecurso;
     }
 
@@ -58,5 +57,13 @@ public  class Recurso {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Pista getPista() {
+        return pista;
+    }
+
+    public void setPista(Pista pista) {
+        this.pista = pista;
     }
 }

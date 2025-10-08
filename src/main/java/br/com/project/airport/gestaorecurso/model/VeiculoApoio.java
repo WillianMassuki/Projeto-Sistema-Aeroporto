@@ -1,29 +1,33 @@
 package br.com.project.airport.gestaorecurso.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
 public class VeiculoApoio{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public String placa;
+    private String placa;
 
-    public String tipoVeiculo;
+    private String tipoVeiculo;
+    private Boolean emUso;
 
-    public Boolean emUso;
+    @ManyToOne
+    @JoinColumn(name = "id_pista")
+    private Pista pista;
 
     public VeiculoApoio() {
     }
 
-    public VeiculoApoio(String placa, String tipoVeiculo, Boolean emUso) {
+
+    public VeiculoApoio(String placa, String tipoVeiculo, Boolean emUso, Pista pista) {
         this.placa = placa;
         this.tipoVeiculo = tipoVeiculo;
         this.emUso = emUso;
+        this.pista = pista;
     }
 
     public String getPlaca() {
@@ -48,5 +52,13 @@ public class VeiculoApoio{
 
     public void setEmUso(Boolean emUso) {
         this.emUso = emUso;
+    }
+
+    public Pista getPista() {
+        return pista;
+    }
+
+    public void setPista(Pista pista) {
+        this.pista = pista;
     }
 }
